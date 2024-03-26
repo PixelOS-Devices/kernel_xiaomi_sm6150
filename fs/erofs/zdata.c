@@ -7,6 +7,7 @@
 #include "compress.h"
 #include <linux/overflow.h>
 #include <linux/prefetch.h>
+#include <linux/overflow.h>
 #include <linux/cpuhotplug.h>
 #include <trace/events/erofs.h>
 
