@@ -639,7 +639,7 @@ static int sf_fb_notifier_callback(struct notifier_block *self,
                                    unsigned long event, void *data)
 {
     struct sf_ctl_device *ctl_dev = container_of(self, struct sf_ctl_device, notifier);
-    struct fb_event *evdata = data;
+    struct msm_drm_notifier *evdata = data;
     unsigned int blank;
     int retval = 0;
 
