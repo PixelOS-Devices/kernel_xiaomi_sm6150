@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 4.14.344-openela Kernel Configuration
+# Linux/arm64 4.14.348-openela Kernel Configuration
 #
 CONFIG_ARM64=y
 CONFIG_64BIT=y
@@ -2319,7 +2319,7 @@ CONFIG_INPUT_FINGERPRINT=y
 # CONFIG_FINGERPRINT_FPC_TEE is not set
 # CONFIG_FINGERPRINT_GOODIX_FOD is not set
 CONFIG_FINGERPRINT_GOODIX_TA=y
-CONFIG_FINGERPRINT_FS_TEE=y
+# CONFIG_FINGERPRINT_FS_TEE is not set
 
 #
 # Hardware I/O ports
