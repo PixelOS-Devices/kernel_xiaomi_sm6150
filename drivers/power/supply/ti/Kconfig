@@ -9,4 +9,5 @@ config BQ2597X_CHARGE_PUMP
 	  BQ2597X is a div2 charge pump capable of delivering 8A charge current
 	  with very high efficiency.
 
+
 endmenu

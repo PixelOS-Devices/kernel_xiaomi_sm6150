@@ -1447,4 +1447,3 @@ module_exit(cp_qc30_exit);
 MODULE_AUTHOR("Fei Jiang<jiangfei1@xiaomi.com>");
 MODULE_DESCRIPTION("Xiaomi cp qc30");
 MODULE_LICENSE("GPL");
-

@@ -34,8 +34,6 @@
 #include "smb5-lib.h"
 #include "schgm-flash.h"
 
-#include <soc/qcom/socinfo.h>
-
 static struct smb_params smb5_pmi632_params = {
 	.fcc			= {
 		.name   = "fast charge current",
@@ -783,6 +781,7 @@ static int smb5_parse_dt(struct smb5 *chip)
 		}
 	}
 #endif
+
 	rc = of_property_read_u32(node, "qcom,charger-temp-max",
 			&chg->charger_temp_max);
 	if (rc < 0)
@@ -3181,9 +3180,6 @@ static int smb5_init_hw(struct smb5 *chip)
 	int rc, type = 0;
 	u8 val = 0, mask = 0;
 	union power_supply_propval pval;
-	uint32_t hw_version;
-
-	hw_version = get_hw_version_platform();
 
 	if (chip->dt.no_battery)
 		chg->fake_capacity = 50;
@@ -3311,8 +3307,9 @@ static int smb5_init_hw(struct smb5 *chip)
 	 */
 	if (chg->chg_param.smb_version == PMI632_SUBTYPE) {
 		schgm_flash_init(chg);
-		smblib_rerun_apsd_if_required(chg);
 	}
+
+	smblib_rerun_apsd_if_required(chg);
 
 	/* Use ICL results from HW */
 	rc = smblib_icl_override(chg, HW_AUTO_MODE);
@@ -3655,8 +3652,8 @@ static int smb5_init_hw(struct smb5 *chip)
 	 * 1. set 0x154a bit0 to 1 to enable detection of debug accessory in sink mode i.e. detecting Rp-Rp on both the CC pins
 	 * 2. set 0x154a bit1 to 1 to enable charging when debug access SNK mode is detected
 	 * 3. set 0x154a bit2 to 1 to select ICL based on FMB1/2 table specified in MDOS during debug access SNK mode
-         * 4. set 0x154a bit3 to 0 to allow AICL to run (if enabled) for debug access mode
-	 * 4. set 0x154a bit4 to 0 to disable FMB
+	 * 4. set 0x154a bit3 to 0 to allow AICL to run (if enabled) for debug access mode
+	 * 5. set 0x154a bit4 to 0 to disable FMB
 	 */
 	rc = smblib_masked_write(chg, TYPE_C_DEBUG_ACC_SNK_CFG, 0x1F, 0x07);
 	if (rc < 0) {

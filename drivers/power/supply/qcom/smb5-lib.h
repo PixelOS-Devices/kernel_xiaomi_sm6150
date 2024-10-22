@@ -632,11 +632,11 @@ struct smb_charger {
 	struct delayed_work	role_reversal_check;
 	struct delayed_work	pr_swap_detach_work;
 	struct delayed_work	pr_lock_clear_work;
-        struct delayed_work     micro_usb_switch_work;
+	struct delayed_work	micro_usb_switch_work;
 	struct delayed_work	reg_work;
 	struct delayed_work	six_pin_batt_step_chg_work;
 	struct delayed_work	reduce_fcc_work;
-	struct delayed_work     status_report_work;
+	struct delayed_work	status_report_work;
 	struct delayed_work	thermal_setting_work;
 
 	struct alarm		lpd_recheck_timer;
