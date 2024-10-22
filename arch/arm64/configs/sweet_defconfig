@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 4.14.348-openela Kernel Configuration
+# Linux/arm64 4.14.353-openela Kernel Configuration
 #
 CONFIG_ARM64=y
 CONFIG_64BIT=y
@@ -1529,7 +1529,6 @@ CONFIG_AKM09970=y
 CONFIG_TI_DRV8846=y
 CONFIG_SIMTRAY_STATUS=y
 CONFIG_LDO_WL2866D=y
-CONFIG_FORCE_FAST_CHARGE=y
 # CONFIG_C2PORT is not set
 
 #
@@ -2710,6 +2709,7 @@ CONFIG_POWER_SUPPLY=y
 # CONFIG_BATTERY_GAUGE_LTC2941 is not set
 # CONFIG_BATTERY_RT5033 is not set
 # CONFIG_CHARGER_RT9455 is not set
+CONFIG_K6_CHARGE=y
 
 #
 # Qualcomm Technologies, Inc. Charger and Fuel Gauge support
@@ -2735,7 +2735,6 @@ CONFIG_ONEWIRE_GPIO=y
 # TI Technologies, Inc. Charger support
 #
 CONFIG_BQ2597X_CHARGE_PUMP=y
-CONFIG_K6_CHARGE=y
 CONFIG_HWMON=y
 # CONFIG_HWMON_VID is not set
 # CONFIG_HWMON_DEBUG_CHIP is not set
